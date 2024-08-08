@@ -2,6 +2,7 @@ import TabComponent from "../TabButton/TabButton";
 import { EXAMPLES } from "../../data";
 import { useState } from "react";
 import Section from "../Section/Section";
+import Tabs from "../Tabs/Tabs";
 
 export default function Examples() {
   const [selectedText, setSelectedText] = useState();
@@ -27,42 +28,47 @@ export default function Examples() {
   }
 
   return (
-    <Section title="Examples" id="examples">
-      <menu>
-        <TabComponent
-          isSelected={selectedText === "components"}
-          onSelect={() => {
-            handleSelect("components");
-          }}
-        >
-          Components
-        </TabComponent>
-        <TabComponent
-          isSelected={selectedText === "jsx"}
-          onSelect={() => {
-            handleSelect("jsx");
-          }}
-        >
-          JSX
-        </TabComponent>
-        <TabComponent
-          isSelected={selectedText === "props"}
-          onSelect={() => {
-            handleSelect("props");
-          }}
-        >
-          Props
-        </TabComponent>
-        <TabComponent
-          isSelected={selectedText === "state"}
-          onSelect={() => {
-            handleSelect("state");
-          }}
-        >
-          State
-        </TabComponent>
-      </menu>
-      {initialText}
+    <Section id="examples" title="Examples">
+      <Tabs
+        buttons={
+          <>
+            <TabComponent
+              isSelected={selectedText === "components"}
+              onClick={() => {
+                handleSelect("components");
+              }}
+            >
+              Components
+            </TabComponent>
+            <TabComponent
+              isSelected={selectedText === "jsx"}
+              onClick={() => {
+                handleSelect("jsx");
+              }}
+            >
+              JSX
+            </TabComponent>
+            <TabComponent
+              isSelected={selectedText === "props"}
+              onClick={() => {
+                handleSelect("props");
+              }}
+            >
+              Props
+            </TabComponent>
+            <TabComponent
+              isSelected={selectedText === "state"}
+              onClick={() => {
+                handleSelect("state");
+              }}
+            >
+              State
+            </TabComponent>
+          </>
+        }
+      >
+        {initialText}
+      </Tabs>
     </Section>
   );
 }
