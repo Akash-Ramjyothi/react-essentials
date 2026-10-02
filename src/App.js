@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className="app-main">
         <CoreConcepts />
         <Examples />
       </main>
