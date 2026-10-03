@@ -8,9 +8,6 @@
 .pnp.js
 .pnp.loader.mjs
 
-# =================================
-#  Build outputs
-# =================================
 /build
 /dist
 /out
