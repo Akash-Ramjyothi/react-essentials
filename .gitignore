@@ -13,9 +13,7 @@
 /out
 *.tsbuildinfo
 
-# =================================
 #  Environment files (sensitive)
-# =================================
 .env
 .env.local
 .env.development.local
